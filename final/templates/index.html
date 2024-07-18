@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Nav Bar</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Nav bar -->
+            <header>
+                <div class="logo">Cleaning Furniture</div>
+                <ul class="nav-links">
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                    <li><a href="{{url_for('booking')}}">Booking</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </header>
+            <!-- Nav bar end -->
+
+            <!-- Banner -->
+            <section class="banner">
+                Welcome to Cleaning Furniture
+                <button onclick="location.href='contact.html'">Contact Us</button>
+            </section>
+            <!-- Banner end -->
+        </div>
+
+        <div>
+            
+
+            
+        </div>
+        <!-- contact us -->
+        <div class="contact_us">
+            <div>
+                <h1>Contact Us</h1>
+                <p>Our company is located in the heart of the city. <br> We are always ready to
+                    help you with your cleaning needs. <br> We are open 24/7. <br> You can contact us
+                    by phone or email. <br>We will be happy to answer all your questions.</p>
+            </div>
+            <div>
+                <h2>Our Address</h2>
+                <p>123 Main St,South Africa,SA 2194</p>
+                <h2>Our Phone</h2>
+                <p>(123) 456-7890</p>
+                <h2>Our Email</h2>
+                <p>info@cleaningfurniture.com</p>
+
+            </div>
+            <div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                        <iframe style="right:0%; width:100% ;height:100%;" id="gmap_canvas" src="https://maps.google.com/maps?q=Knights+Ave,+Randburg,+2194,+South Africa=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe><a href="https://www.analarmclock.com"></a><br><a href="https://www.onclock.net"></a><br>
+                </div>
+            </div>
+
+        </div>
+ 
+
+            </div>
+        <!-- Footer -->
+        <footer id="footer">
+            &copy; 2024 Cleaning Furniture. All rights reserved.
+        </footer>
+        <!-- Footer end -->
+    </div>
+
+    <script>
+        // nav bar js
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.querySelector('header');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        // nav bar ending js
+    </script>
+</body>
+</html>
